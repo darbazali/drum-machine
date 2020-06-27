@@ -18,16 +18,16 @@ class Drum extends Component {
   }
 
   handleKeyPress(event) {
-    let keyTrigger = this.props.keyTrigger;
+    
     if (event.keyCode === this.props.keyCode) {
-      let audio = event.target.querySelector("audio" + "#" + keyTrigger);
-      audio.play();
+      this.playSound(event);
     }
   }
 
   playSound(event) {
-
-    let audio = event.target.querySelector("audio");
+    let keyTrigger = this.props.keyTrigger;
+    let audio = event.target.querySelector("audio" + "#" + keyTrigger);
+    audio.currentTime = 0;
     audio.play();
     this.props.updateDisplay(this.props.id.replace(/-/g, " "));
   }
