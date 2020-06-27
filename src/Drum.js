@@ -28,6 +28,7 @@ export class Drum extends Component {
     let audio = event.target.querySelector("audio" + "#" + keyTrigger);
     audio.currentTime = 0;
     audio.play();
+    audio.volume = this.props.volume;
     this.props.updateDisplay(this.props.id.replace(/-/g, " "));
   }
 
@@ -42,6 +43,7 @@ export class Drum extends Component {
         {this.props.keyTrigger}
 
         <audio
+          
           id={this.props.keyTrigger}
           className="clip"
           src={this.props.url}

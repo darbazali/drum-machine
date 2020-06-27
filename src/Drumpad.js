@@ -7,25 +7,44 @@ export default class Drumpad extends Component {
     super(props);
 
     this.state = {
-      display: "",
+      display: "Drum Machine",
+      volume: 0.5
     };
 
     this.updateDisplay = this.updateDisplay.bind(this);
+    this.adjustVolume = this.adjustVolume.bind(this)
   }
 
   updateDisplay(clipID) {
     this.setState({ display: clipID });
   }
 
+  adjustVolume(e) {
+    this.setState({
+        volume: e.target.value,
+        display: 'Volume: ' + Math.floor(e.target.value * 100)
+    })
+  }
+
   render() {
     return (
       <div id="drum-machine">
+          <h1>Drum Machine</h1>
         <div id="display">{this.state.display}</div>
+        <input 
+            id="volume"
+            type="range" 
+            min="0" max="1" 
+            step="0.01" 
+            value={this.state.volume} 
+            onChange={this.adjustVolume} 
+        />
+
         <div id="drum-container">
           {soundBank.map((drum) => {
             return (
               <Drum
-                content={drum.id.replace(/_/g, " ")}
+                volume={this.state.volume}
                 url={drum.url}
                 key={drum.keyCode}
                 keyCode={drum.keyCode}
