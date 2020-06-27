@@ -18,7 +18,6 @@ export class Drum extends Component {
   }
 
   handleKeyPress(event) {
-    
     if (event.keyCode === this.props.keyCode) {
       this.playSound(event);
     }
@@ -51,5 +50,3 @@ export class Drum extends Component {
     );
   }
 }
-
-
