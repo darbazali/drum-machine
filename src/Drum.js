@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { bankOne } from "./soundBank";
 
 export class Drum extends Component {
   constructor(props) {

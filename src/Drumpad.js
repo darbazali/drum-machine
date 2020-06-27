@@ -41,19 +41,21 @@ export default class Drumpad extends Component {
         />
 
         <div id="drum-container">
-          {soundBank.map((drum) => {
-            return (
-              <Drum
-                volume={this.state.volume}
-                url={drum.url}
-                key={drum.keyCode}
-                keyCode={drum.keyCode}
-                id={drum.id}
-                keyTrigger={drum.keyTrigger}
-                updateDisplay={this.updateDisplay}
-              />
-            );
-          })}
+          {
+            soundBank.map((drum) => {
+              return (
+                <Drum
+                  volume={this.state.volume}
+                  url={drum.url}
+                  key={drum.keyCode}
+                  keyCode={drum.keyCode}
+                  id={drum.id}
+                  keyTrigger={drum.keyTrigger}
+                  updateDisplay={this.updateDisplay}
+                />
+              );
+            })
+          }
         </div>
       </div>
     );
