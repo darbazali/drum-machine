@@ -1,11 +1,13 @@
 import React from "react";
 import { render } from "react-dom";
-
+import DrumpadApp from "./Drumpad";
+import Drumpad2 from "./Drumpad2";
 
 const App = () => {
   return (
     <div>
-      <h1>Hello React!</h1>
+      {/* <DrumpadApp /> */}
+      <Drumpad2 />
     </div>
   );
 };
