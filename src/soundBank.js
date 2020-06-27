@@ -1,4 +1,4 @@
-export const bankOne = [
+export const soundBank = [
   {
     keyCode: 81,
     keyTrigger: "Q",

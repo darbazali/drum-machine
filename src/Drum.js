@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { bankOne } from "./bankOne";
+import { bankOne } from "./soundBank";
 
-class Drum extends Component {
+export class Drum extends Component {
   constructor(props) {
     super(props);
 
@@ -52,40 +52,4 @@ class Drum extends Component {
   }
 }
 
-export default class Drumpad2 extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      display: "",
-    };
-
-    this.updateDisplay = this.updateDisplay.bind(this);
-  }
-
-  updateDisplay(e) {
-    // this.setState({display: e.target.id})
-    this.setState({ display: e });
-  }
-
-  render() {
-    return (
-      <div id="drum-machine">
-        <div id="display">{this.state.display}</div>
-        {bankOne.map((drum) => {
-          return (
-            <Drum
-              content={drum.id.replace(/_/g, " ")}
-              url={drum.url}
-              key={drum.keyCode}
-              keyCode={drum.keyCode}
-              id={drum.id}
-              keyTrigger={drum.keyTrigger}
-              updateDisplay={this.updateDisplay}
-            />
-          );
-        })}
-      </div>
-    );
-  }
-}
