@@ -1,30 +1,9 @@
-import React, { useState } from "react";
-
-import { soundBank } from "../soundBank";
+import React from "react";
 import Drum from "./Drum";
-import Volume from "./Volume";
-import Display from "./Display";
 
-const Drumpad = () => {
-  const [display, setDisplay] = useState("Drum Machine");
-  const [volume, setVolume] = useState(0.5);
-
-  const updateDisplay = (clipID) => {
-    setDisplay(clipID);
-  };
-
-  const adjustVolume = (e) => {
-    setVolume(e.target.value);
-    setDisplay("Volume: " + Math.floor(e.target.value * 100));
-  };
-
+const Drumpad = ({ updateDisplay, soundBank, volume }) => {
   return (
     <div id="drum-machine">
-      <h1>Drum Machine</h1>
-
-      <Display text={display} />
-      <Volume volume={volume} adjustVolume={adjustVolume} />
-
       <div id="drum-container">
         {soundBank.map((drum) => {
           return (
