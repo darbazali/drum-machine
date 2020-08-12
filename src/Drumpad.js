@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { soundBank } from "./soundBank";
 import { Drum } from "./Drum";
+import Volume from "./components/Volume";
 
 export default class Drumpad extends Component {
   constructor(props) {
@@ -31,13 +32,10 @@ export default class Drumpad extends Component {
       <div id="drum-machine">
           <h1>Drum Machine</h1>
         <div id="display">{this.state.display}</div>
-        <input 
-            id="volume"
-            type="range" 
-            min="0" max="1" 
-            step="0.01" 
-            value={this.state.volume} 
-            onChange={this.adjustVolume} 
+      
+        <Volume 
+          volume={this.state.volume}
+          adjustVolume={this.adjustVolume}
         />
 
         <div id="drum-container">
