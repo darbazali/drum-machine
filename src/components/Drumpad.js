@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { soundBank } from "../soundBank";
-import { Drum } from "../Drum";
+import Drum from "./Drum";
 import Volume from "./Volume";
 import Display from "./Display";
 
