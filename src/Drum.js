@@ -42,7 +42,6 @@ export class Drum extends Component {
         {this.props.keyTrigger}
 
         <audio
-          
           id={this.props.keyTrigger}
           className="clip"
           src={this.props.url}
